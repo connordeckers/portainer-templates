@@ -267,82 +267,7 @@
         }
       ]
     },
-    {
-      "type": 1,
-      "title": "SQL Server",
-      "description": "Microsoft SQL Server on Linux",
-      "categories": ["database"],
-      "platform": "linux",
-      "note": "Password needs to include at least 8 characters including uppercase, lowercase letters, base-10 digits and/or non-alphanumeric symbols.",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/microsoft.png",
-      "image": "mcr.microsoft.com/mssql/server:2019-latest",
-      "ports": ["1433/tcp"],
-      "env": [
-        {
-          "name": "ACCEPT_EULA",
-          "default": "Y",
-          "preset": true
-        },
-        {
-          "name": "SA_PASSWORD",
-          "label": "SA password"
-        }
-      ]
-    },
-    {
-      "type": 1,
-      "title": "SQL Server",
-      "description": "Microsoft SQL Server Developer for Windows containers",
-      "categories": ["database"],
-      "platform": "windows",
-      "note": "Password needs to include at least 8 characters including uppercase, lowercase letters, base-10 digits and/or non-alphanumeric symbols.",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/microsoft.png",
-      "image": "microsoft/mssql-server-windows-developer:latest",
-      "ports": ["1433/tcp"],
-      "env": [
-        {
-          "name": "ACCEPT_EULA",
-          "default": "Y",
-          "preset": true
-        },
-        {
-          "name": "sa_password",
-          "label": "SA password"
-        }
-      ],
-      "volumes": [
-        {
-          "container": "C:/temp/"
-        }
-      ]
-    },
-    {
-      "type": 1,
-      "title": "SQL Server Express",
-      "description": "Microsoft SQL Server Express for Windows containers",
-      "categories": ["database"],
-      "platform": "windows",
-      "note": "Password needs to include at least 8 characters including uppercase, lowercase letters, base-10 digits and/or non-alphanumeric symbols.",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/microsoft.png",
-      "image": "microsoft/mssql-server-windows-express:latest",
-      "ports": ["1433/tcp"],
-      "env": [
-        {
-          "name": "ACCEPT_EULA",
-          "default": "Y",
-          "preset": true
-        },
-        {
-          "name": "sa_password",
-          "label": "SA password"
-        }
-      ],
-      "volumes": [
-        {
-          "container": "C:/temp/"
-        }
-      ]
-    },
+
     {
       "type": 1,
       "title": "Solr",
@@ -370,24 +295,6 @@
       "volumes": [
         {
           "container": "/data"
-        }
-      ]
-    },
-    {
-      "type": 2,
-      "title": "Redis Cluster",
-      "description": "Open-source in-memory data structure store - Cluster mode",
-      "categories": ["database"],
-      "platform": "linux",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/redis.png",
-      "repository": {
-        "url": "https://github.com/portainer/templates",
-        "stackfile": "stacks/redis-cluster/docker-stack.yaml"
-      },
-      "env": [
-        {
-          "name": "REDIS_PASSWD",
-          "label": "Redis password"
         }
       ]
     },
@@ -487,7 +394,7 @@
       }
     },
     {
-      "type": 2,
+      "type": 1,
       "title": "OpenFaaS",
       "name": "func",
       "description": "Serverless functions made simple",
@@ -501,7 +408,7 @@
       }
     },
     {
-      "type": 2,
+      "type": 1,
       "title": "IronFunctions",
       "description": "Open-source serverless computing platform",
       "note": "Deploys the IronFunctions API and UI.",
@@ -512,204 +419,6 @@
         "url": "https://github.com/portainer/templates",
         "stackfile": "stacks/ironfunctions/docker-stack.yml"
       }
-    },
-    {
-      "type": 2,
-      "title": "CockroachDB",
-      "description": "CockroachDB cluster",
-      "note": "Deploys an insecure CockroachDB cluster, please refer to <a href=\"https://www.cockroachlabs.com/docs/stable/orchestrate-cockroachdb-with-docker-swarm.html\" target=\"_blank\">CockroachDB documentation</a> for production deployments.",
-      "categories": ["database"],
-      "platform": "linux",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/cockroachdb.png",
-      "repository": {
-        "url": "https://github.com/portainer/templates",
-        "stackfile": "stacks/cockroachdb/docker-stack.yml"
-      }
-    },
-    {
-      "type": 2,
-      "title": "WordPress",
-      "description": "WordPress setup with a MySQL database",
-      "note": "Deploys a WordPress instance connected to a MySQL database.",
-      "categories": ["CMS"],
-      "platform": "linux",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
-      "repository": {
-        "url": "https://github.com/portainer/templates",
-        "stackfile": "stacks/wordpress/docker-stack.yml"
-      },
-      "env": [
-        {
-          "name": "MYSQL_DATABASE_PASSWORD",
-          "label": "Database root password",
-          "description": "Password used by the MySQL root user."
-        }
-      ]
-    },
-    {
-      "type": 3,
-      "title": "WordPress",
-      "description": "WordPress setup with a MySQL database",
-      "note": "Deploys a WordPress instance connected to a MySQL database.",
-      "categories": ["CMS"],
-      "platform": "linux",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
-      "repository": {
-        "url": "https://github.com/portainer/templates",
-        "stackfile": "stacks/wordpress/docker-compose.yml"
-      },
-      "env": [
-        {
-          "name": "MYSQL_DATABASE_PASSWORD",
-          "label": "Database root password",
-          "description": "Password used by the MySQL root user."
-        }
-      ]
-    },
-    {
-      "type": 3,
-      "title": "OpenAMT",
-      "description": "OpenAMT Cloud Toolkit",
-      "note": "MPS password needs to be 8-32 characters including one uppercase, one lowercase letters, one base-10 digit and one special character.",
-      "categories": ["Cloud"],
-      "platform": "linux",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
-      "repository": {
-        "url": "https://github.com/portainer/templates",
-        "stackfile": "stacks/openamt/docker-compose.yml"
-      },
-      "env": [
-        {
-          "name": "POSTGRES_USER",
-          "label": "Database user"
-        },
-        {
-          "name": "POSTGRES_PASSWORD",
-          "label": "Database password"
-        },
-        {
-          "name": "MPS_USER",
-          "label": "MPS user"
-        },
-        {
-          "name": "MPS_PASSWORD",
-          "label": "MPS password"
-        },
-        {
-          "name": "MPS_COMMON_NAME",
-          "label": "MPS URL",
-          "description": "Used to connect to the MPS API."
-        },
-        {
-          "name": "MPS_SECRET",
-          "label": "MPS Secret",
-          "description": "Strong secret key used to log into MPS."
-        },
-        {
-          "name": "VAULT_SECRET",
-          "label": "Vault secret",
-          "description": "Secret token used to log into Vault (don't include '.' character)."
-        }
-      ]
-    },
-    {
-      "type": 2,
-      "title": "Microsoft OMS Agent",
-      "description": "Microsoft Operations Management Suite Linux agent.",
-      "categories": ["OPS"],
-      "platform": "linux",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/microsoft.png",
-      "repository": {
-        "url": "https://github.com/portainer/templates",
-        "stackfile": "stacks/microsoft-oms/docker-stack.yml"
-      },
-      "env": [
-        {
-          "name": "AZURE_WORKSPACE_ID",
-          "label": "Workspace ID",
-          "description": "Azure Workspace ID"
-        },
-        {
-          "name": "AZURE_PRIMARY_KEY",
-          "label": "Primary key",
-          "description": "Azure primary key"
-        }
-      ]
-    },
-    {
-      "title": "Sematext Docker Agent",
-      "type": 2,
-      "categories": ["Log Management", "Monitoring"],
-      "description": "Collect logs, metrics and docker events",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/sematext_agent.png",
-      "platform": "linux",
-      "repository": {
-        "url": "https://github.com/portainer/templates",
-        "stackfile": "stacks/sematext-agent-docker/docker-stack.yml"
-      },
-      "env": [
-        {
-          "name": "LOGSENE_TOKEN",
-          "label": "Logs token"
-        },
-        {
-          "name": "SPM_TOKEN",
-          "label": "SPM monitoring token"
-        }
-      ]
-    },
-    {
-      "title": "Datadog agent",
-      "type": 2,
-      "categories": ["Monitoring"],
-      "description": "Collect events and metrics",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/datadog_agent.png",
-      "platform": "linux",
-      "repository": {
-        "url": "https://github.com/portainer/templates",
-        "stackfile": "stacks/datadog-agent/docker-stack.yml"
-      },
-      "env": [
-        {
-          "name": "API_KEY",
-          "label": "Datadog API key"
-        }
-      ]
-    },
-    {
-      "type": 4,
-      "title": "Wordpress",
-      "description": "Wordpress setup with a MySQL database",
-      "note": "Deploys a Wordpress instance connected to a MySQL database.",
-      "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/stacks/wordpress/edge/docker-stack.yml"
-    },
-    {
-      "type": 4,
-      "title": "CockroachDB",
-      "description": "CockroachDB cluster",
-      "note": "Deploys an insecure CockroachDB cluster, please refer to <a href=\"https://www.cockroachlabs.com/docs/stable/orchestrate-cockroachdb-with-docker-swarm.html\" target=\"_blank\">CockroachDB documentation</a> for production deployments.",
-      "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/stacks/cockroachdb/edge/docker-stack.yml"
-    },
-    {
-      "type": 3,
-      "title": "FDO",
-      "description": "FDO",
-      "platform": "linux",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
-      "repository": {
-        "url": "https://github.com/portainer/templates",
-        "stackfile": "stacks/fdo/docker-stack.yml"
-      },
-      "env": [
-        {
-          "name": "owner_api_user",
-          "label": "API Username"
-        },
-        {
-          "name": "owner_api_password",
-          "label": "API Password"
-        }
-      ]
     }
   ]
 }
